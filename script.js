@@ -7,7 +7,13 @@ var users = [
     location:"Rourkela, India", 
     name:"Satyam" , 
     age:21 , 
-    interests:["coding","sports"],
+    interests:[{
+        icon:`<i class="ri-code-s-slash-line"></i>`,
+        interest:"coding"
+    },{
+        icon:`<i class="ri-user-heart-fill"></i>`,
+        interest:"sports"
+    }],
     bio : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit? Rem aspernatur molestiae temporibus nobis!",
     isFriend:null
     },
@@ -17,7 +23,13 @@ var users = [
     location:"Kandhamal, India", 
     name:"Snehanjali" , 
     age:19 , 
-    interests:["music","dance"],
+    interests:[{
+        icon:`<i class="ri-pencil-line"></i>`,
+        interest:"drawing"
+    },{
+        icon:`<i class="ri-restaurant-line"></i>`,
+        interest:"food"
+    }],
     bio : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit? Rem aspernatur molestiae temporibus nobis!",
     isFriend:null
     },
@@ -27,19 +39,40 @@ var users = [
     location:"Bangalore, India", 
     name:"Harshita" , 
     age:25 , 
-    interests:["music","coding","sports"],
+    interests:[{
+        icon:`<i class="ri-code-s-slash-line"></i>`,
+        interest:"coding"
+    },{
+        icon:`<i class="ri-restaurant-line"></i>`,
+        interest:"food"
+    }],
     bio : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit? Rem aspernatur molestiae temporibus nobis!",
     isFriend:null
     },
 ];
 
-var curr = 0;
-
-function select(){
-    
+function select(elem){
+    return document.querySelector(elem);
 }
 
+var curr = 0;
+
 (function setInitial(){
-    document.querySelector(".maincard img").src = users[curr].displayPic;
-    document.querySelector(".incomingcard img").src = users[curr+1].displayPic;
+    select(".maincard img").src = users[curr].displayPic;
+    select(".incomingcard img").src = users[curr+1]?.displayPic;
+    select(".prflimg img").src = users[curr].profilepic;
+    select(".badge h5").textContent = users[curr].pendingmsg;
+    select(".location h3").textContent = users[curr].location;
+    select(".name h1:nth-child(1)").textContent = users[curr].name;
+    select(".name h1:nth-child(2)").textContent = users[curr].age;
+
+    let clutter = "";
+    users[curr].interests.forEach(function(interests,icon){
+        clutter+=`<div class="tag flex items-center bg-white/30 px-3 py-1 rounded-full gap-3">
+        ${interests.icon}<h3 class="text-sm tracking-tight capitalize">${interests.interest}</h3>
+    </div>`
+    })
+    select(".tags").innerHTML = clutter;
+
+    select(".bio p").textContent = users[curr].bio;
 })();
