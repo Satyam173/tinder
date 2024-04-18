@@ -15,11 +15,11 @@
 </head>
 <body>
     <div class="w-full h-screen bg-black font-['helvetica_now_display']">
-        <div class="imagecontainer w-full h-screen relative">
-            <div class="maincard z-[3] w-full absolute h-screen">
+        <div class="imagecontainer w-full h-screen relative overflow-hidden">
+            <div class="maincard z-[3] w-[130%] absolute element top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[130%]">
                 <img class="w-full h-full object-cover" src="" alt="xyz">
             </div>
-        <div class="incomingcard z-[2] w-full absolute h-screen">
+        <div class="incomingcard z-[2] w-[130%] absolute element top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[130%]">
             <img class="w-full h-full object-cover" src="" alt="xyz">
         </div>
         </div>
@@ -38,23 +38,23 @@
             </div>
             <div class="detailscontainer w-full">
                 <div class="details w-full px-5 py-6">
-                    <div class="location flex gap-4"><i class="w-[1.6rem] h-[1.6rem] flex items-center justify-center rounded-full bg-white ri-corner-left-up-line"></i>
+                    <div class="elem location flex gap-4"><i class="w-[1.6rem] h-[1.6rem] flex items-center justify-center rounded-full bg-white ri-corner-left-up-line"></i>
                         <h3 class="text-white ">USA, California</h3>
                     </div>
-                    <div class="name flex gap-6 text-white mt-3">
+                    <div class="elem name flex gap-6 text-white mt-3">
                         <h1 class="text-7xl font-regular tracking-tighter">Victoria</h1>
                         <h1 class="text-7xl opacity-60 font-regular tracking-tighter">20</h1>
                     </div>
-                    <div class="tags flex gap-3 text-white mt-4">
+                    <div class="elem tags flex gap-3 text-white mt-4">
                         
                     </div>
-                    <div class="bio text-white/65 mt-5">
+                    <div class="elem bio text-white/65 mt-5">
                         <h3 class="text-xl">Bio</h3>
                         <p class="text-lg font-semibold mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit? Rem aspernatur molestiae temporibus nobis!</p>
                     </div>
-                    <div class="flex items-start mt-10 gap-1">
-                        <button class="py-3 rounded-xl w-1/2 bg-white"><i class="ri-close-fill text-3xl font-semibold"></i></button>
-                        <button class="py-3 rounded-xl w-1/2 bg-[#FC5149]"><i class="ri-heart-3-fill text-3xl text-white font-semibold"></i></button>
+                    <div class="elem flex items-start mt-10 gap-1">
+                        <button class="deny py-3 rounded-xl w-1/2 bg-white"><i class="ri-close-fill text-3xl font-semibold"></i></button>
+                        <button class="accept py-3 rounded-xl w-1/2 bg-[#FC5149]"><i class="ri-heart-3-fill text-3xl text-white font-semibold"></i></button>
                     </div>
                 </div>
             </div>
